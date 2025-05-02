@@ -1,9 +1,6 @@
 [build]
-  command = "npm run build"
+  command = "vite build --config vite.netlify.config.js"
   publish = "dist"
-
-[dev]
-  command = "npm run dev"
 
 [[redirects]]
   from = "/*"
