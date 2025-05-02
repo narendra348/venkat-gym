@@ -23,8 +23,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -41,6 +39,7 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 
 export default function ContactSection() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Setup form with react-hook-form
   const form = useForm<ContactFormValues>({
@@ -55,30 +54,24 @@ export default function ContactSection() {
     },
   });
   
-  // Submit contact mutation
-  const submitContact = useMutation({
-    mutationFn: async (values: ContactFormValues) => {
-      return await apiRequest("POST", "/api/contact", values);
-    },
-    onSuccess: () => {
+  // Handle form submission (frontend demo)
+  const handleSubmit = (values: ContactFormValues) => {
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
       toast({
         title: "Message Sent",
         description: "Thank you for your message! We'll get back to you soon.",
       });
       form.reset();
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "There was an error sending your message. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
+      setIsSubmitting(false);
+    }, 1000);
+  };
 
   // Handle form submission
   const onSubmit = (values: ContactFormValues) => {
-    submitContact.mutate(values);
+    handleSubmit(values);
   };
 
   return (
@@ -161,7 +154,7 @@ export default function ContactSection() {
           <div className="bg-white rounded-lg shadow-lg p-8 reveal">
             <h3 className="font-montserrat font-bold text-2xl mb-6">Send Us a Message</h3>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <form action="https://formspree.io/f/xjkwyggn" className="space-y-4" method="POST">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <FormField
                     control={form.control}
@@ -290,9 +283,9 @@ export default function ContactSection() {
                 <Button 
                   type="submit"
                   className="bg-primary hover:bg-primary/90 text-white font-montserrat font-semibold rounded-full w-full"
-                  disabled={submitContact.isPending}
+                  disabled={isSubmitting}
                 >
-                  {submitContact.isPending ? "SENDING..." : "SEND MESSAGE"}
+                  {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
                 </Button>
               </form>
             </Form>

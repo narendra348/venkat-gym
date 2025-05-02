@@ -15,9 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { testimonials } from "@/lib/data";
+import { testimonials as testimonialData } from "@/lib/data";
 
 const feedbackSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -32,14 +30,8 @@ export default function FeedbackSection() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [autoplayEnabled, setAutoplayEnabled] = useState(true);
   const { toast } = useToast();
-  const queryClient = useQueryClient();
-
-  // Use React Query to fetch testimonials
-  const { data: testimonialData, isLoading } = useQuery({
-    queryKey: ['/api/testimonials'],
-    // If API was implemented, we'd use the default queryFn
-    queryFn: () => Promise.resolve(testimonials),
-  });
+  const [localTestimonials, setLocalTestimonials] = useState(testimonialData);
+  const isLoading = false;
 
   // Setup form with react-hook-form
   const form = useForm<FeedbackFormValues>({
@@ -65,58 +57,57 @@ export default function FeedbackSection() {
     form.setValue("rating", rating);
   };
 
-  // Submit feedback mutation
-  const submitFeedback = useMutation({
-    mutationFn: async (values: FeedbackFormValues) => {
-      return await apiRequest("POST", "/api/testimonials", values);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Feedback Submitted",
-        description: "Thank you for your feedback!",
-      });
-      form.reset();
-      setSelectedRating(0);
-      // Invalidate testimonials query to refresh the data
-      queryClient.invalidateQueries({ queryKey: ['/api/testimonials'] });
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "There was an error submitting your feedback. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
+  // Simulate submit feedback (store in state for demo)
+  const handleSubmitFeedback = (values: FeedbackFormValues) => {
+    // Create a new testimonial object from the form values
+    const newTestimonial = {
+      id: localTestimonials.length + 1,
+      name: values.name,
+      status: "New Member",
+      rating: values.rating,
+      text: values.feedback,
+      image: `https://randomuser.me/api/portraits/${Math.random() > 0.5 ? 'women' : 'men'}/${Math.floor(Math.random() * 100)}.jpg`,
+    };
+    
+    // Add the new testimonial to our local state
+    setLocalTestimonials([newTestimonial, ...localTestimonials]);
+    
+    toast({
+      title: "Feedback Submitted",
+      description: "Thank you for your feedback!",
+    });
+    form.reset();
+    setSelectedRating(0);
+  };
 
   // Autoplay functionality for testimonials
   useEffect(() => {
-    if (!autoplayEnabled || !testimonialData?.length) return;
+    if (!autoplayEnabled || !localTestimonials.length) return;
     
     const interval = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % (testimonialData?.length || 1));
+      setActiveTestimonial((prev) => (prev + 1) % localTestimonials.length);
     }, 5000);
     
     return () => clearInterval(interval);
-  }, [autoplayEnabled, testimonialData?.length]);
+  }, [autoplayEnabled, localTestimonials.length]);
 
   // Handle previous testimonial
   const prevTestimonial = () => {
     setActiveTestimonial((prev) => 
-      prev === 0 ? (testimonialData?.length || 1) - 1 : prev - 1
+      prev === 0 ? localTestimonials.length - 1 : prev - 1
     );
   };
 
   // Handle next testimonial
   const nextTestimonial = () => {
     setActiveTestimonial((prev) => 
-      (prev + 1) % (testimonialData?.length || 1)
+      (prev + 1) % localTestimonials.length
     );
   };
 
   // Handle form submission
   const onSubmit = (values: FeedbackFormValues) => {
-    submitFeedback.mutate(values);
+    handleSubmitFeedback(values);
   };
 
   return (
@@ -153,7 +144,7 @@ export default function FeedbackSection() {
                     </div>
                   </div>
                 </div>
-              ) : testimonialData?.length ? (
+              ) : localTestimonials?.length ? (
                 <>
                   {/* Testimonial Items */}
                   <div className="min-h-[250px]">
@@ -167,16 +158,16 @@ export default function FeedbackSection() {
                           />
                         ))}
                       </div>
-                      <p className="italic text-lg mb-4">"{testimonialData[activeTestimonial].text}"</p>
+                      <p className="italic text-lg mb-4">"{localTestimonials[activeTestimonial].text}"</p>
                       <div className="flex items-center">
                         <img 
-                          src={testimonialData[activeTestimonial].image} 
-                          alt={testimonialData[activeTestimonial].name} 
+                          src={localTestimonials[activeTestimonial].image} 
+                          alt={localTestimonials[activeTestimonial].name} 
                           className="w-12 h-12 rounded-full mr-4 object-cover"
                         />
                         <div>
-                          <h4 className="font-montserrat font-bold">{testimonialData[activeTestimonial].name}</h4>
-                          <p className="text-sm text-gray-600">{testimonialData[activeTestimonial].status}</p>
+                          <h4 className="font-montserrat font-bold">{localTestimonials[activeTestimonial].name}</h4>
+                          <p className="text-sm text-gray-600">{localTestimonials[activeTestimonial].status}</p>
                         </div>
                       </div>
                     </div>
@@ -200,7 +191,7 @@ export default function FeedbackSection() {
                   
                   {/* Dots */}
                   <div className="flex justify-center mt-6">
-                    {testimonialData.map((_, i) => (
+                    {localTestimonials.map((_, i) => (
                       <span 
                         key={i}
                         className={`w-3 h-3 rounded-full mx-1 cursor-pointer transition-all ${i === activeTestimonial ? 'bg-primary' : 'bg-gray-300'}`}
@@ -311,9 +302,8 @@ export default function FeedbackSection() {
                 <Button 
                   type="submit"
                   className="bg-primary hover:bg-primary/90 text-white font-montserrat font-semibold rounded-full w-full"
-                  disabled={submitFeedback.isPending}
                 >
-                  {submitFeedback.isPending ? "SUBMITTING..." : "SUBMIT FEEDBACK"}
+                  SUBMIT FEEDBACK
                 </Button>
               </form>
             </Form>
