@@ -1,17 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useQuery } from "@tanstack/react-query";
 import { schedule } from "@/lib/data";
 
 export default function ScheduleSection() {
   const [activeDay, setActiveDay] = useState("monday");
   
-  // Use React Query to fetch data
-  const { data: scheduleData, isLoading } = useQuery({
-    queryKey: ['/api/schedule'],
-    // If API was implemented, we'd use the default queryFn
-    queryFn: () => Promise.resolve(schedule),
-  });
+  // Use local data directly
+  const scheduleData = schedule;
+  const isLoading = false;
 
   const weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
   

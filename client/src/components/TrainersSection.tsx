@@ -4,16 +4,12 @@ import {
   Mail 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useQuery } from "@tanstack/react-query";
 import { trainers } from "@/lib/data";
 
 export default function TrainersSection() {
-  // Use React Query to fetch data
-  const { data, isLoading } = useQuery({
-    queryKey: ['/api/trainers'],
-    // If API was implemented, we'd use the default queryFn
-    queryFn: () => Promise.resolve(trainers),
-  });
+  // Use local data directly
+  const data = trainers;
+  const isLoading = false;
 
   return (
     <section id="trainers" className="py-20 bg-light">

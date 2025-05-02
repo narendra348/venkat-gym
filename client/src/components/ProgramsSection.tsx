@@ -1,14 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { useQuery } from "@tanstack/react-query";
 import { programs } from "@/lib/data";
 
 export default function ProgramsSection() {
-  // Use React Query to fetch data 
-  const { data, isLoading } = useQuery({
-    queryKey: ['/api/programs'],
-    // If API was implemented, we'd use the default queryFn
-    queryFn: () => Promise.resolve(programs),
-  });
+  // Use local data directly
+  const data = programs;
+  const isLoading = false;
 
   return (
     <section id="programs" className="py-20 bg-gray-100">
