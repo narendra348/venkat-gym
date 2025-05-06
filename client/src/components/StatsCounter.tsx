@@ -67,9 +67,9 @@ export default function StatsCounter() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           <Stat target={10} suffix="+" label="YEARS EXPERIENCE" />
-          <Stat target={25} suffix="+" label="EXPERT TRAINERS" />
-          <Stat target={100} suffix="+" label="WEEKLY CLASSES" />
-          <Stat target={2000} suffix="+" label="HAPPY MEMBERS" />
+          <Stat target={2} suffix="+" label="EXPERT TRAINERS" />
+          <Stat target={10} suffix="+" label="WEEKLY CLASSES" />
+          <Stat target={200} suffix="+" label="HAPPY MEMBERS" />
         </div>
       </div>
     </div>

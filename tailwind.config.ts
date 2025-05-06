@@ -13,6 +13,8 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        dark: "#121212", // Dark color for footer and other dark sections
+        light: "#f8f9fa", // Light background color
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
