@@ -7,7 +7,7 @@ export const programs = [
     name: "HIIT Revolution",
     description: "High-intensity interval training to maximize calorie burn and boost metabolism in just 45 minutes.",
     duration: 45,
-    image: "./public/image19.webp"
+    image: "/public/image19.webp"
   },
   {
     id: 2,
