@@ -14,7 +14,7 @@ export const programs = [
     name: "Power Yoga",
     description: "Dynamic yoga sequences that build strength, flexibility and mindfulness for total body wellness.",
     duration: 60,
-    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    image: "/public/image18.webp"
   },
   {
     id: 3,
