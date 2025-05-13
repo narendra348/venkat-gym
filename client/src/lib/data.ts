@@ -7,7 +7,7 @@ export const programs = [
     name: "HIIT Revolution",
     description: "High-intensity interval training to maximize calorie burn and boost metabolism in just 45 minutes.",
     duration: 45,
-    image: "/combat-cardio.webp" // Corrected reference
+    image: "/hiit.webp" // Corrected reference
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const programs = [
     name: "Cycle Intensity",
     description: "Rhythm-based indoor cycling with dynamic music and motivating instruction for cardio fitness.",
     duration: 45,
-    image: "/training.webp" // Corrected reference
+    image: "/cycle.webp" // Corrected reference
   },
   {
     id: 5,
