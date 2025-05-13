@@ -2,10 +2,10 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 
 export default function AchievementsSection() {
   const achievements = [
-    { id: 1, image: "/image10.jpeg", title: "Awarded Best Gym 2025" },
-    { id: 2, image: "/image12.jpeg", title: "1000+ Members Strong" },
-    { id: 3, image: "/image13.jpeg", title: "Certified Trainers" },
-    { id: 4, image: "/image14.jpeg", title: "State-of-the-Art Equipment" },
+    { id: 1, image: "/image10.webp", title: "Awarded Best Gym 2025" },
+    { id: 2, image: "/image12.webp", title: "1000+ Members Strong" },
+    { id: 3, image: "/image13.webp", title: "Certified Trainers" },
+    { id: 4, image: "/image14.webp", title: "State-of-the-Art Equipment" },
   ];
 
   return (
