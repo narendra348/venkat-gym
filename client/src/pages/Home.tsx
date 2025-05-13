@@ -5,7 +5,7 @@ import StatsCounter from "@/components/StatsCounter";
 import AboutSection from "@/components/AboutSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import TrainersSection from "@/components/TrainersSection";
-
+import AchievementsSection from "@/components/AchievementsSection';
 import FeedbackSection from "@/components/FeedbackSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -48,7 +48,7 @@ export default function Home() {
       <AboutSection />
       <ProgramsSection />
       <TrainersSection />
-      <ScheduleSection />
+      <AchievementsSection>
       <FeedbackSection />
       <ContactSection />
       <Footer />
