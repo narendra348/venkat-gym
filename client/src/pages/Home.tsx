@@ -5,7 +5,7 @@ import StatsCounter from "@/components/StatsCounter";
 import AboutSection from "@/components/AboutSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import TrainersSection from "@/components/TrainersSection";
-import ScheduleSection from "@/components/ScheduleSection";
+
 import FeedbackSection from "@/components/FeedbackSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
