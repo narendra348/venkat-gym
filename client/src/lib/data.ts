@@ -53,7 +53,7 @@ export const trainers = [
     specialty: "HIIT Specialist",
     bio: "ACE Certified with 8+ years experience in high-intensity training and functional fitness.",
     quote: "I believe in pushing boundaries and helping you discover your true potential through challenging, effective workouts.",
-    image: "/image7.webp"
+    image: "/gymtrainer.webp"
   },
   {
     id: 2,
