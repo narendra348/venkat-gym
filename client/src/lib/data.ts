@@ -7,42 +7,42 @@ export const programs = [
     name: "HIIT Revolution",
     description: "High-intensity interval training to maximize calorie burn and boost metabolism in just 45 minutes.",
     duration: 45,
-    image: "/public/combat-cardio.webp" // Corrected reference
+    image: "/combat-cardio.webp" // Corrected reference
   },
   {
     id: 2,
     name: "Power Yoga",
     description: "Dynamic yoga sequences that build strength, flexibility and mindfulness for total body wellness.",
     duration: 60,
-    image: "/public/dumbell.webp" // Corrected reference
+    image: "/dumbell.webp" // Corrected reference
   },
   {
     id: 3,
     name: "Strength Mastery",
     description: "Focused strength training with expert coaching to build muscle and power for all fitness levels.",
     duration: 50,
-    image: "/public/dumbells.jpeg" // Corrected reference
+    image: "/dumbells.jpeg" // Corrected reference
   },
   {
     id: 4,
     name: "Cycle Intensity",
     description: "Rhythm-based indoor cycling with dynamic music and motivating instruction for cardio fitness.",
     duration: 45,
-    image: "/public/training.webp" // Corrected reference
+    image: "/training.webp" // Corrected reference
   },
   {
     id: 5,
     name: "Combat Cardio",
     description: "High-energy boxing and kickboxing combinations to build endurance, strength, and confidence.",
     duration: 60,
-    image: "/public/six packs.webp" // Corrected reference
+    image: "/six packs.webp" // Corrected reference
   },
   {
     id: 6,
     name: "Mind & Body Balance",
     description: "Restorative practices combining meditation, stretching, and breathwork for stress reduction.",
     duration: 55,
-    image: "/public/unisex.webp" // Corrected reference
+    image: "/unisex.webp" // Corrected reference
   }
 ];
 
@@ -53,7 +53,7 @@ export const trainers = [
     specialty: "HIIT Specialist",
     bio: "ACE Certified with 8+ years experience in high-intensity training and functional fitness.",
     quote: "I believe in pushing boundaries and helping you discover your true potential through challenging, effective workouts.",
-    image: "/public/image7.webp"
+    image: "/image7.webp"
   },
   {
     id: 2,
@@ -61,7 +61,7 @@ export const trainers = [
     specialty: "Yoga Instructor",
     bio: "RYT 500 with specializations in Power Yoga, Vinyasa Flow, and mindfulness practices.",
     quote: "My approach combines physical postures with mindfulness to create a practice that strengthens both body and mind.",
-    image: "/public/image8.webp"
+    image: "/image8.webp"
   },
   
  
