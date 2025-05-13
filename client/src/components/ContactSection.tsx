@@ -141,7 +141,7 @@ export default function ContactSection() {
                   <Instagram size={18} />
                 </a>
              
-                </a>
+                
               </div>
             </div>
           </div>
