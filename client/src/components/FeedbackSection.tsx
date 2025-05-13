@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { testimonials as testimonialData } from "@/lib/data";
+import AchievementsSection from "@/components/AchievementsSection";
 
 const feedbackSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -111,205 +112,208 @@ export default function FeedbackSection() {
   };
 
   return (
-    <section id="feedback" className="py-20 bg-light">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-montserrat font-bold text-4xl mb-4 reveal">MEMBER <span className="text-primary">FEEDBACK</span></h2>
-          <div className="w-24 h-1 bg-accent mx-auto mb-8 reveal"></div>
-          <p className="text-lg max-w-3xl mx-auto reveal">Hear what our community has to say about their Elevate experience.</p>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Testimonial Carousel */}
-          <div className="bg-white rounded-lg shadow-lg p-8 reveal">
-            <div 
-              className="testimonial-carousel relative"
-              onMouseEnter={() => setAutoplayEnabled(false)}
-              onMouseLeave={() => setAutoplayEnabled(true)}
-            >
-              {isLoading ? (
-                // Loading skeleton
-                <div className="animate-pulse space-y-4">
-                  <div className="flex mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-5 h-5 mr-1 bg-gray-300 rounded-full"></div>
-                    ))}
-                  </div>
-                  <div className="h-32 bg-gray-300 rounded"></div>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
-                    <div>
-                      <div className="h-5 bg-gray-300 rounded w-24 mb-1"></div>
-                      <div className="h-4 bg-gray-300 rounded w-36"></div>
-                    </div>
-                  </div>
-                </div>
-              ) : localTestimonials?.length ? (
-                <>
-                  {/* Testimonial Items */}
-                  <div className="min-h-[250px]">
-                    <div className="mb-6">
-                      <div className="flex mb-3">
-                        {[...Array(5)].map((_, i) => (
-                          <Star 
-                            key={i}
-                            className="text-yellow-400 fill-yellow-400" 
-                            size={20}
-                          />
-                        ))}
-                      </div>
-                      <p className="italic text-lg mb-4">"{localTestimonials[activeTestimonial].text}"</p>
-                      <div className="flex items-center">
-                        <img 
-                          src={localTestimonials[activeTestimonial].image} 
-                          alt={localTestimonials[activeTestimonial].name} 
-                          className="w-12 h-12 rounded-full mr-4 object-cover"
-                        />
-                        <div>
-                          <h4 className="font-montserrat font-bold">{localTestimonials[activeTestimonial].name}</h4>
-                          <p className="text-sm text-gray-600">{localTestimonials[activeTestimonial].status}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Navigation Arrows */}
-                  <button 
-                    onClick={prevTestimonial}
-                    className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center focus:outline-none hover:bg-primary/90 transition-all"
-                    aria-label="Previous testimonial"
-                  >
-                    <ChevronLeft size={20} />
-                  </button>
-                  <button 
-                    onClick={nextTestimonial}
-                    className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center focus:outline-none hover:bg-primary/90 transition-all"
-                    aria-label="Next testimonial"
-                  >
-                    <ChevronRight size={20} />
-                  </button>
-                  
-                  {/* Dots */}
-                  <div className="flex justify-center mt-6">
-                    {localTestimonials.map((_, i) => (
-                      <span 
-                        key={i}
-                        className={`w-3 h-3 rounded-full mx-1 cursor-pointer transition-all ${i === activeTestimonial ? 'bg-primary' : 'bg-gray-300'}`}
-                        onClick={() => setActiveTestimonial(i)}
-                      ></span>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <p className="text-center py-10">No testimonials available yet. Be the first to share your experience!</p>
-              )}
-            </div>
+    <>
+      <AchievementsSection />
+      <section id="feedback" className="py-20 bg-light">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="font-montserrat font-bold text-4xl mb-4 reveal">MEMBER <span className="text-primary">FEEDBACK</span></h2>
+            <div className="w-24 h-1 bg-accent mx-auto mb-8 reveal"></div>
+            <p className="text-lg max-w-3xl mx-auto reveal">Hear what our community has to say about their  experience.</p>
           </div>
           
-          {/* Submit Feedback Form */}
-          <div className="bg-white rounded-lg shadow-lg p-8 reveal">
-            <h3 className="font-montserrat font-bold text-2xl mb-6">Share Your Experience</h3>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-semibold">Name</FormLabel>
-                      <FormControl>
-                        <Input 
-                          placeholder="Your Name" 
-                          {...field} 
-                          className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-semibold">Email</FormLabel>
-                      <FormControl>
-                        <Input 
-                          placeholder="Your Email" 
-                          type="email" 
-                          {...field} 
-                          className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="rating"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-semibold">Your Rating</FormLabel>
-                      <FormControl>
-                        <div className="flex space-x-2">
-                          {[1, 2, 3, 4, 5].map((rating) => (
-                            <Star
-                              key={rating}
-                              onClick={() => handleRatingClick(rating)}
-                              onMouseEnter={() => handleRatingHover(rating)}
-                              onMouseLeave={() => handleRatingHover(0)}
-                              className={`text-2xl cursor-pointer transition-all ${
-                                (hoveredRating ? hoveredRating >= rating : selectedRating >= rating)
-                                  ? 'text-yellow-400 fill-yellow-400'
-                                  : 'text-gray-300'
-                              }`}
-                              size={28}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Testimonial Carousel */}
+            <div className="bg-white rounded-lg shadow-lg p-8 reveal">
+              <div 
+                className="testimonial-carousel relative"
+                onMouseEnter={() => setAutoplayEnabled(false)}
+                onMouseLeave={() => setAutoplayEnabled(true)}
+              >
+                {isLoading ? (
+                  // Loading skeleton
+                  <div className="animate-pulse space-y-4">
+                    <div className="flex mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <div key={i} className="w-5 h-5 mr-1 bg-gray-300 rounded-full"></div>
+                      ))}
+                    </div>
+                    <div className="h-32 bg-gray-300 rounded"></div>
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+                      <div>
+                        <div className="h-5 bg-gray-300 rounded w-24 mb-1"></div>
+                        <div className="h-4 bg-gray-300 rounded w-36"></div>
+                      </div>
+                    </div>
+                  </div>
+                ) : localTestimonials?.length ? (
+                  <>
+                    {/* Testimonial Items */}
+                    <div className="min-h-[250px]">
+                      <div className="mb-6">
+                        <div className="flex mb-3">
+                          {[...Array(5)].map((_, i) => (
+                            <Star 
+                              key={i}
+                              className="text-yellow-400 fill-yellow-400" 
+                              size={20}
                             />
                           ))}
-                          <input 
-                            type="hidden" 
+                        </div>
+                        <p className="italic text-lg mb-4">"{localTestimonials[activeTestimonial].text}"</p>
+                        <div className="flex items-center">
+                          <img 
+                            src={localTestimonials[activeTestimonial].image} 
+                            alt={localTestimonials[activeTestimonial].name} 
+                            className="w-12 h-12 rounded-full mr-4 object-cover"
+                          />
+                          <div>
+                            <h4 className="font-montserrat font-bold">{localTestimonials[activeTestimonial].name}</h4>
+                            <p className="text-sm text-gray-600">{localTestimonials[activeTestimonial].status}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Navigation Arrows */}
+                    <button 
+                      onClick={prevTestimonial}
+                      className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center focus:outline-none hover:bg-primary/90 transition-all"
+                      aria-label="Previous testimonial"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+                    <button 
+                      onClick={nextTestimonial}
+                      className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-4 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center focus:outline-none hover:bg-primary/90 transition-all"
+                      aria-label="Next testimonial"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+                    
+                    {/* Dots */}
+                    <div className="flex justify-center mt-6">
+                      {localTestimonials.map((_, i) => (
+                        <span 
+                          key={i}
+                          className={`w-3 h-3 rounded-full mx-1 cursor-pointer transition-all ${i === activeTestimonial ? 'bg-primary' : 'bg-gray-300'}`}
+                          onClick={() => setActiveTestimonial(i)}
+                        ></span>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <p className="text-center py-10">No testimonials available yet. Be the first to share your experience!</p>
+                )}
+              </div>
+            </div>
+            
+            {/* Submit Feedback Form */}
+            <div className="bg-white rounded-lg shadow-lg p-8 reveal">
+              <h3 className="font-montserrat font-bold text-2xl mb-6">Share Your Experience</h3>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-semibold">Name</FormLabel>
+                        <FormControl>
+                          <Input 
+                            placeholder="Your Name" 
+                            {...field} 
+                            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-semibold">Email</FormLabel>
+                        <FormControl>
+                          <Input 
+                            placeholder="Your Email" 
+                            type="email" 
+                            {...field} 
+                            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="rating"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-semibold">Your Rating</FormLabel>
+                        <FormControl>
+                          <div className="flex space-x-2">
+                            {[1, 2, 3, 4, 5].map((rating) => (
+                              <Star
+                                key={rating}
+                                onClick={() => handleRatingClick(rating)}
+                                onMouseEnter={() => handleRatingHover(rating)}
+                                onMouseLeave={() => handleRatingHover(0)}
+                                className={`text-2xl cursor-pointer transition-all ${
+                                  (hoveredRating ? hoveredRating >= rating : selectedRating >= rating)
+                                    ? 'text-yellow-400 fill-yellow-400'
+                                    : 'text-gray-300'
+                                }`}
+                                size={28}
+                              />
+                            ))}
+                            <input 
+                              type="hidden" 
+                              {...field} 
+                            />
+                          </div>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="feedback"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-semibold">Your Feedback</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Share your experience with us" 
+                            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary resize-none h-32"
                             {...field} 
                           />
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="feedback"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-semibold">Your Feedback</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Share your experience with us" 
-                          className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary resize-none h-32"
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <Button 
-                  type="submit"
-                  className="bg-primary hover:bg-primary/90 text-white font-montserrat font-semibold rounded-full w-full"
-                >
-                  SUBMIT FEEDBACK
-                </Button>
-              </form>
-            </Form>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <Button 
+                    type="submit"
+                    className="bg-primary hover:bg-primary/90 text-white font-montserrat font-semibold rounded-full w-full"
+                  >
+                    SUBMIT FEEDBACK
+                  </Button>
+                </form>
+              </Form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

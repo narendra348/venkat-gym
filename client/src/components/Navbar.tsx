@@ -45,7 +45,7 @@ export default function Navbar() {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 shadow-md' : 'py-3'} bg-light bg-opacity-90 bg-blur`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="#hero" className="flex items-center">
-          <span className="font-montserrat font-bold text-2xl text-primary">ELEVATE</span>
+          <span className="font-montserrat font-bold text-2xl text-primary">VENKAT'S FITZONE</span>
         </Link>
         
         {/* Desktop Navigation */}

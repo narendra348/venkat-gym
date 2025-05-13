@@ -24,21 +24,16 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-montserrat font-bold text-2xl mb-6">ELEVATE</h3>
+            <h3 className="font-montserrat font-bold text-2xl mb-6">venkat's fitzone</h3>
             <p className="mb-6">Elevating fitness experiences through expert guidance, innovative programs, and a supportive community.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-primary transition-all">
+              <a href="https://www.facebook.com/share/1BQZVfnDSa/" className="text-white hover:text-primary transition-all">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-white hover:text-primary transition-all">
+              <a href="https://www.instagram.com/venkat_fitzonegym_mylavaram?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-white hover:text-primary transition-all">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-white hover:text-primary transition-all">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-primary transition-all">
-                <Youtube size={20} />
-              </a>
+          
             </div>
           </div>
           
@@ -48,7 +43,7 @@ export default function Footer() {
               <li><a href="#about" className="hover:text-primary transition-all">About Us</a></li>
               <li><a href="#programs" className="hover:text-primary transition-all">Programs</a></li>
               <li><a href="#trainers" className="hover:text-primary transition-all">Trainers</a></li>
-              <li><a href="#schedule" className="hover:text-primary transition-all">Schedule</a></li>
+             
               <li><a href="#feedback" className="hover:text-primary transition-all">Testimonials</a></li>
               <li><a href="#contact" className="hover:text-primary transition-all">Contact</a></li>
             </ul>
@@ -92,7 +87,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {new Date().getFullYear()} Elevate Fitness. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} venkat's fitzone. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-sm hover:text-primary transition-all">Privacy Policy</a>
             <a href="#" className="text-sm hover:text-primary transition-all">Terms of Service</a>

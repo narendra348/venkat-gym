@@ -6,7 +6,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-montserrat font-bold text-4xl mb-4 reveal">ABOUT <span className="text-primary">ELEVATE</span></h2>
+          <h2 className="font-montserrat font-bold text-4xl mb-4 reveal">ABOUT <span className="text-primary">VENKAT'S FITZONE</span></h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8 reveal"></div>
           <p className="text-lg max-w-3xl mx-auto reveal">Our mission is to provide a transformative fitness experience that elevates your physical and mental wellbeing through expert guidance, innovative programs, and a supportive community.</p>
         </div>
@@ -28,7 +28,7 @@ export default function AboutSection() {
           
           <div className="space-y-6 reveal">
             <h3 className="font-montserrat font-bold text-3xl mb-4">Our Philosophy</h3>
-            <p className="text-lg mb-4">At Elevate, we believe fitness is more than just exercise—it's a lifestyle that empowers you to reach your full potential. Our holistic approach combines cutting-edge training methods, nutritional guidance, and wellness support.</p>
+            <p className="text-lg mb-4">At Venkat's Fitzone, we believe fitness is more than just exercise—it's a lifestyle that empowers you to reach your full potential. Our holistic approach combines cutting-edge training methods, nutritional guidance, and wellness support.</p>
             
             <div className="space-y-4">
               <div className="flex items-start">

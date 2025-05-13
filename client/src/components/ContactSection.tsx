@@ -95,7 +95,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-montserrat font-semibold text-lg">Our Location</h4>
-                  <p>123 Fitness Avenue, Downtown<br/>New York, NY 10001</p>
+                  <p>opp gromour boys hostle Vijayawada Road,<br/>Mylavaram</p>
                 </div>
               </div>
               
@@ -105,7 +105,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-montserrat font-semibold text-lg">Phone Number</h4>
-                  <p>+1 (555) 123-4567</p>
+                  <p>+91 8247366831</p>
                 </div>
               </div>
               
@@ -115,7 +115,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-montserrat font-semibold text-lg">Email Address</h4>
-                  <p>info@elevatefitness.com</p>
+                  <p>venkatsfitzone@gmail.com</p>
                 </div>
               </div>
               
@@ -125,8 +125,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-montserrat font-semibold text-lg">Operating Hours</h4>
-                  <p>Monday - Friday: 5:00 AM - 10:00 PM<br/>
-                  Saturday - Sunday: 7:00 AM - 8:00 PM</p>
+                  <p>Monday - Saturday: 5:30 AM - 10:00 AM AND 4:00 PM to 9:00 PM<br/>
+                   Sunday: 5:30 AM - 9:00 AM</p>
                 </div>
               </div>
             </div>
@@ -134,17 +134,13 @@ export default function ContactSection() {
             <div className="mt-8">
               <h4 className="font-montserrat font-semibold text-lg mb-4">Connect With Us</h4>
               <div className="flex space-x-4">
-                <a href="#" className="bg-secondary hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                <a href="https://www.facebook.com/share/1BQZVfnDSa/" className="bg-secondary hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
                   <Facebook size={18} />
                 </a>
-                <a href="#" className="bg-secondary hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
+                <a href="https://www.instagram.com/venkat_fitzonegym_mylavaram?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="bg-secondary hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
                   <Instagram size={18} />
                 </a>
-                <a href="#" className="bg-secondary hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
-                  <Twitter size={18} />
-                </a>
-                <a href="#" className="bg-secondary hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
-                  <Youtube size={18} />
+             
                 </a>
               </div>
             </div>
