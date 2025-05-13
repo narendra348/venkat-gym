@@ -14,7 +14,7 @@ export const programs = [
     name: "Power Yoga",
     description: "Dynamic yoga sequences that build strength, flexibility and mindfulness for total body wellness.",
     duration: 60,
-    image: "/yoga.webp" // Corrected reference
+    image: "/ladytrainer.webp" // Corrected reference
   },
   {
     id: 3,
