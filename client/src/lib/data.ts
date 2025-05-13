@@ -72,24 +72,24 @@ export const trainers = [
 export const testimonials = [
   {
     id: 1,
-    name: "Jennifer K.",
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
+    name: "narendra T.",
+    image: "",
     status: "Member for 2 years",
     rating: 5,
     text: "Joining VENKAT'S FITZONE was the best fitness decision I've ever made. The trainers are incredibly knowledgeable and supportive, pushing me to achieve goals I never thought possible. The facility is beautiful and always clean!"
   },
   {
     id: 2,
-    name: "Michael T.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "manikumar T.",
+    image: "",
     status: "Member for 1 year",
     rating: 5,
     text: "The variety of classes at VENKAT'S FITZONE keeps my fitness routine exciting and challenging. I've seen incredible improvements in my strength and endurance. The community is so welcoming - it feels like a fitness family!"
   },
   {
     id: 3,
-    name: "Samantha R.",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    name: "karthik M.",
+    image: "",
     status: "Member for 6 months",
     rating: 5,
     text: "I was intimidated to start my fitness journey, but the team at VENKAT'S FITZONE made me feel comfortable from day one. The personalized attention and encouraging environment have transformed not just my body but my confidence as well."
