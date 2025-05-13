@@ -2,10 +2,10 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 
 export default function AchievementsSection() {
   const achievements = [
-    { id: 1, image: "/image1.jpeg", title: "Awarded Best Gym 2025" },
-    { id: 2, image: "/image2.jpeg", title: "1000+ Members Strong" },
-    { id: 3, image: "/image3.jpeg", title: "Certified Trainers" },
-    { id: 4, image: "/image4.jpeg", title: "State-of-the-Art Equipment" },
+    { id: 1, image: "/image10.jpeg", title: "Awarded Best Gym 2025" },
+    { id: 2, image: "/image12.jpeg", title: "1000+ Members Strong" },
+    { id: 3, image: "/image13.jpeg", title: "Certified Trainers" },
+    { id: 4, image: "/image14.jpeg", title: "State-of-the-Art Equipment" },
   ];
 
   return (
@@ -19,16 +19,16 @@ export default function AchievementsSection() {
 
         <Carousel className="reveal">
           <CarouselContent>
-            {achievements.map((achievement) => (
-              <CarouselItem key={achievement.id} className="p-4">
+            {achievements.map((achievements) => (
+              <CarouselItem key={achievements.id} className="p-4">
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                   <img
-                    src={achievement.image}
-                    alt={achievement.title}
+                    src={achievements.image}
+                    alt={achievements.title}
                     className="w-full h-64 object-cover"
                   />
                   <div className="p-4 text-center">
-                    <h3 className="font-montserrat font-bold text-xl">{achievement.title}</h3>
+                    <h3 className="font-montserrat font-bold text-xl">{achievements.title}</h3>
                   </div>
                 </div>
               </CarouselItem>
