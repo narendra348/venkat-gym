@@ -15,7 +15,7 @@ export default function AboutSection() {
           <div className="reveal">
             <div className="relative">
               <img 
-                src="../k1.jpg"
+                src="/image18.webp"
                 alt="Modern fitness studio with equipment" 
                 className="w-full h-auto rounded-lg shadow-xl"
               />
