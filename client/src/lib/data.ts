@@ -61,7 +61,7 @@ export const trainers = [
     specialty: "Yoga Instructor",
     bio: "RYT 500 with specializations in Power Yoga, Vinyasa Flow, and mindfulness practices.",
     quote: "My approach combines physical postures with mindfulness to create a practice that strengthens both body and mind.",
-    image: "/image8.webp"
+    image: "/ladytrainer.webp"
   },
   
  
