@@ -135,10 +135,10 @@ export default function ContactSection() {
               <h4 className="font-montserrat font-semibold text-lg mb-4">Connect With Us</h4>
               <div className="flex space-x-4">
                 <a href="https://www.facebook.com/share/1BQZVfnDSa/" className="bg-secondary hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
-                  <Facebook size={18} />
+                  /> Facebook size={18} 
                 </a>
                 <a href="https://www.instagram.com/venkat_fitzonegym_mylavaram?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="bg-secondary hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition-all">
-                  <Instagram size={18} />
+                  /> Instagram size={18} 
                 </a>
              
                 
