@@ -35,7 +35,7 @@ export const programs = [
     name: "Combat Cardio",
     description: "High-energy boxing and kickboxing combinations to build endurance, strength, and confidence.",
     duration: 60,
-    image: "/six packs.webp" // Corrected reference
+    image: "/combat-cardio.webp" // Corrected reference
   },
   {
     id: 6,
