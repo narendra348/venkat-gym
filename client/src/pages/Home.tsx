@@ -48,7 +48,7 @@ export default function Home() {
       <AboutSection />
       <ProgramsSection />
       <TrainersSection />
-      <AchievementsSection>
+      <AchievementsSection/>
       <FeedbackSection />
       <ContactSection />
       <Footer />
