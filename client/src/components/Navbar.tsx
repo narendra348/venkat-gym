@@ -36,7 +36,7 @@ export default function Navbar() {
     { name: "About", href: "#about" },
     { name: "Programs", href: "#programs" },
     { name: "Trainers", href: "#trainers" },
-    { name: "Schedule", href: "#schedule" },
+    { name: "Achievements", href: "#achievements" },
     { name: "Feedback", href: "#feedback" },
     { name: "Contact", href: "#contact" }
   ];
