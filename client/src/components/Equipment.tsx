@@ -8,20 +8,15 @@ export default function EquipmentSection() {
     { id: 3, image: "/dumbell.webp", title: "Certified Trainers" },
     { id: 4, image: "/gymtrainer.webp", title: "State-of-the-Art Equipment" },
     { id: 5, image: "/image3.jpeg", title: "State-of-the-Art Equipment" },
-    { id: 6, image: "/image4.jpeg", title: "State-of-the-Art Equipment" },
-    { id: 7, image: "/image6.jpeg", title: "State-of-the-Art Equipment" },
-    { id: 8, image: "/image7.jpeg", title: "State-of-the-Art Equipment" },
-    { id: 9, image: "/gym.jpeg", title: "State-of-the-Art Equipment" },
-    { id: 10, image: "/image18.webp", title: "State-of-the-Art Equipment" },
-    { id: 11, image: "/image19.webp", title: "State-of-the-Art Equipment" },
-    { id: 12, image: "/strength.webp", title: "State-of-the-Art Equipment" },
-    { id: 13, image: "/training.webp", title: "State-of-the-Art Equipment" },
-    { id: 14, image: "/gym1.webm", title: "State-of-the-Art Equipment" },
-    { id: 15, image: "/gym2.webm", title: "State-of-the-Art Equipment" },
-    { id: 16, image: "/gym3.webm", title: "State-of-the-Art Equipment" },
-    { id: 17, image: "/gym4.webm", title: "State-of-the-Art Equipment" },
-    { id: 18, image: "/gym5.webm", title: "State-of-the-Art Equipment" },
-    { id: 19, image: "/gym6.webm", title: "State-of-the-Art Equipment" },
+    { id: 6, image: "/gym.jpeg", title: "State-of-the-Art Equipment" },
+    { id: 7, image: "/image18.webp", title: "State-of-the-Art Equipment" },
+    { id: 8, image: "/image19.webp", title: "State-of-the-Art Equipment" },
+    { id: 9, image: "/gym1.webm", title: "State-of-the-Art Equipment" },
+    { id: 10, image: "/gym2.webm", title: "State-of-the-Art Equipment" },
+    { id: 11, image: "/gym3.webm", title: "State-of-the-Art Equipment" },
+    { id: 12, image: "/gym4.webm", title: "State-of-the-Art Equipment" },
+    { id: 13, image: "/gym5.webm", title: "State-of-the-Art Equipment" },
+    { id: 14, image: "/gym6.webm", title: "State-of-the-Art Equipment" },
   ];
 
   return (
@@ -53,7 +48,7 @@ export default function EquipmentSection() {
                     />
                   )}
                   <div className="p-4 text-center">
-                    <h3 className="text-lg font-bold">{equipment.title}</h3>
+
                   </div>
                 </div>
               </CarouselItem>
