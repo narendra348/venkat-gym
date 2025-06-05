@@ -6,7 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import ProgramsSection from "@/components/ProgramsSection";
 import TrainersSection from "@/components/TrainersSection";
 import EquipmentSection from "@/components/Equipment";
-import AchievementsSection from "@/components/AchievementsSection";
+
 
 import FeedbackSection from "@/components/FeedbackSection";
 import ContactSection from "@/components/ContactSection";
@@ -52,7 +52,7 @@ export default function Home() {
       <TrainersSection />
       <EquipmentSection/>
       <FeedbackSection />
-      <AchievementsSection/>
+
       <ContactSection />
       <Footer />
       <BackToTop />
