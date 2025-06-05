@@ -3,20 +3,20 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 export default function EquipmentSection() {
   // Updated paths to remove 'public' prefix
   const equipments = [
-    { id: 1, image: "/image1.jpeg", title: "Awarded Best Gym 2025" },
-    { id: 2, image: "/image2.jpeg", title: "1000+ Members Strong" },
-    { id: 3, image: "/dumbell.webp", title: "Certified Trainers" },
-    { id: 4, image: "/gymtrainer.webp", title: "State-of-the-Art Equipment" },
-    { id: 5, image: "/image3.jpeg", title: "State-of-the-Art Equipment" },
-    { id: 6, image: "/gym.jpeg", title: "State-of-the-Art Equipment" },
-    { id: 7, image: "/image18.webp", title: "State-of-the-Art Equipment" },
-    { id: 8, image: "/image19.webp", title: "State-of-the-Art Equipment" },
-    { id: 9, image: "/gym1.webm", title: "State-of-the-Art Equipment" },
-    { id: 10, image: "/gym2.webm", title: "State-of-the-Art Equipment" },
-    { id: 11, image: "/gym3.webm", title: "State-of-the-Art Equipment" },
-    { id: 12, image: "/gym4.webm", title: "State-of-the-Art Equipment" },
-    { id: 13, image: "/gym5.webm", title: "State-of-the-Art Equipment" },
-    { id: 14, image: "/gym6.webm", title: "State-of-the-Art Equipment" },
+    { id: 7, image: "/image1.jpeg", title: "Awarded Best Gym 2025" },
+    { id: 8, image: "/image2.jpeg", title: "1000+ Members Strong" },
+    { id: 9, image: "/dumbell.webp", title: "Certified Trainers" },
+    { id: 10, image: "/gymtrainer.webp", title: "State-of-the-Art Equipment" },
+    { id: 11, image: "/image3.jpeg", title: "State-of-the-Art Equipment" },
+    { id: 12, image: "/gym.jpeg", title: "State-of-the-Art Equipment" },
+    { id: 13, image: "/image18.webp", title: "State-of-the-Art Equipment" },
+    { id: 14, image: "/image19.webp", title: "State-of-the-Art Equipment" },
+    { id: 1, image: "/gym1.webm", title: "State-of-the-Art Equipment" },
+    { id: 2, image: "/gym2.webm", title: "State-of-the-Art Equipment" },
+    { id: 3, image: "/gym3.webm", title: "State-of-the-Art Equipment" },
+    { id: 4, image: "/gym4.webm", title: "State-of-the-Art Equipment" },
+    { id: 5, image: "/gym5.webm", title: "State-of-the-Art Equipment" },
+    { id: 6, image: "/gym6.webm", title: "State-of-the-Art Equipment" },
   ];
 
   return (
