@@ -148,7 +148,7 @@ export default function ContactSection() {
           <div className="bg-white rounded-lg shadow-lg p-8 reveal">
             <h3 className="font-montserrat font-bold text-2xl mb-6">Send Us a Message</h3>
             <Form {...form}>
-              <form action="https://formspree.io/f/xjkwyggn" className="space-y-4" method="POST">
+              <form action="https://formspree.io/f/myzjpzjr" className="space-y-4" method="POST">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <FormField
                     control={form.control}
