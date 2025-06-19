@@ -36,6 +36,7 @@ export default function AchievementsSection() {
           </CarouselContent>
         </Carousel>
       </div>
+       <h3 className="font-montserrat font-bold text-xl">Swipe Right</h3>
     </section>
   );
 }
