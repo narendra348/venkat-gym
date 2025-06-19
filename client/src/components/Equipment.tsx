@@ -58,6 +58,9 @@ export default function EquipmentSection() {
           </CarouselContent>
         </Carousel>
       </div>
+       <div className="text-center mt-4">
+          <span className="text-gray-500 italic text-sm">Swipe &rarr; to see more</span>
+        </div>
     </section>
   );
 }
