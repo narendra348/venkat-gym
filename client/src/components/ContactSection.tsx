@@ -286,6 +286,21 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
+       <div className="mt-16 flex flex-col items-center">
+        <h3 className="font-montserrat font-bold text-2xl mb-6 text-white text-center">Find Us on the Map</h3>
+        <div className="w-full max-w-3xl rounded-lg overflow-hidden shadow-lg border-4 border-primary">
+          <iframe
+            title="Venkat's Fit Zone Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.423281232081!2d80.63617559678956!3d16.755603700000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35dd12ad5f75fb%3A0xa27a8b7671a0441e!2sfit-zone%20Gym%20a%2Fc!5e0!3m2!1sen!2sin!4v1750327195708!5m2!1sen!2sin"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
     </section>
   );
 }
