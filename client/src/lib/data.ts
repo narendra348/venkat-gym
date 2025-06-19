@@ -54,15 +54,8 @@ export const trainers = [
     bio: "ACE Certified with 8+ years experience in high-intensity training and functional fitness.",
     quote: "I believe in pushing boundaries and helping you discover your true potential through challenging, effective workouts.",
     image: "/gymtrainer.webp"
-  },
-  {
-    id: 2,
-    name: "Sarah Johnson",
-    specialty: "Yoga Instructor",
-    bio: "RYT 500 with specializations in Power Yoga, Vinyasa Flow, and mindfulness practices.",
-    quote: "My approach combines physical postures with mindfulness to create a practice that strengthens both body and mind.",
-    image: "/ladytrainer.webp"
-  },
+  }
+
   
  
 ];
